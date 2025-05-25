@@ -9,3 +9,6 @@ This module is required for many of the core functions in main, without this it 
 ## ChargingHandler
 
 Module is required for the sprinting part of the script, very important towards the script.
+
+# Will i ever release the full verison?
+Absolutely not. This is just a container for scripts, you have to piece it together if you ever really want to use the full thing.
