@@ -1,6 +1,7 @@
 local container = {}
 
 local CollectionService = game:GetService("CollectionService")
+local Character = game.Players.LocalPlayer.Character
 local UserStates = Character.UserStates
 
 local ConnectionTable = {}
