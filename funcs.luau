@@ -8,3 +8,5 @@ function container.CheckGrab()
     end
     return true
 end
+
+return container
