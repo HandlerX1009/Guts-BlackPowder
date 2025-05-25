@@ -16,6 +16,10 @@ function container.ToggleCharge()
     end
 end
 
+function container.GetBoolean()
+    return Charging
+end
+
 -- Creates charge value in character userstates to make client sprint for you
 -- WILL RETURN THE OBJECT ONCE CREATED
 function CreateCharge()
