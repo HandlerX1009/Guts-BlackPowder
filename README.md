@@ -2,6 +2,10 @@
 
 **This is a repository for the modules of the game, exploiting is absolutely NOT tolerated**
 
-## Funcs.luau
+## Funcs
 
 This module is required for many of the core functions in main, without this it would basically be useless.
+
+## ChargingHandler
+
+Module is required for the sprinting part of the script, very important towards the script.
