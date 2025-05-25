@@ -82,3 +82,5 @@ function NotCharging()
 
     CollectionService:RemoveTag(Character, "Charging")
 end
+
+return container
