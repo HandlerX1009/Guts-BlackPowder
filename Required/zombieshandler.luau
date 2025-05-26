@@ -32,7 +32,7 @@ function updateAdornment(Adornment, ZombieHumanoid)
     Adornment.Color3 = Color3.fromHSV(0.336 * (Health/MaxHealth), 1, 1)
 end
 
-function updateZombieHandles(Zombies)
+function container.updateZombieHandles(Zombies)
     for _, ZombieData in pairs(Zombies) do
         local Zombie = ZombieData[1] -- The zombie model itself
         local ZombieRoot = ZombieData[2]
@@ -63,12 +63,9 @@ function updateZombieHandles(Zombies)
     end
 end
 
-function container.getNearbyZombies(HitBombers)
+function container.getNearbyZombies()
     local Zombies = {}
-    
-    local ToHit = {}
-    local ToPush = {}
-    
+
     for _, Zombie in pairs(ZombiesFolder:GetChildren()) do
         if Zombie.Name ~= "Agent" and Zombie.Name ~= "Slim" then
             continue
@@ -85,6 +82,15 @@ function container.getNearbyZombies(HitBombers)
 
         table.insert(Zombies, {Zombie, ZombieRoot, ZombieHumanoid, ZombieType})
     end
+
+    return Zombies
+end
+
+function container.getNearbyZombiesFiltered(HitBombers)
+    local Zombies = container.getNearbyZombies()
+    
+    local ToHit = {}
+    local ToPush = {}
     
     for _, ZombieData in pairs(Zombies) do
         local Zombie = ZombieData[1] -- The zombie model itself
@@ -104,9 +110,7 @@ function container.getNearbyZombies(HitBombers)
             table.insert(ToPush, {Zombie, ZombieRoot})
         end
     end
-    
-    updateZombieHandles(Zombies) -- Required for highlights; these show hp!
-    
+
     return ToHit, ToPush
 end
 
