@@ -87,7 +87,7 @@ function container.getNearbyZombies()
     local ModesFolder = Map.Parent:FindFirstChild("Modes")
 
     for _, ObjZombie in pairs(ModesFoder:GetDescendants()) do
-        if not ObjZombie:IsA("Model") then
+        if not ObjZombie:IsA("Model") or not ObjZombie:FindFirstChild("Hit") then
             continue
         end
 
