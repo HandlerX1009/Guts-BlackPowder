@@ -84,10 +84,9 @@ function container.getNearbyZombies()
         table.insert(Zombies, {Zombie, ZombieRoot, ZombieHumanoid, ZombieType})
     end
 
-    print(Map:GetFullName())
     local ModesFolder = Map.Parent:FindFirstChild("Modes")
 
-    for _, ObjZombie in pairs(ModesFoder:GetDescendants()) do
+    for _, ObjZombie in pairs(ModesFolder:GetDescendants()) do
         if not ObjZombie:IsA("Model") or not ObjZombie:FindFirstChild("Hit") then
             continue
         end
