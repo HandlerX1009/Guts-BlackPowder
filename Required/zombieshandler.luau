@@ -2,7 +2,6 @@ local container = {}
 
 local LocalPlayer = game.Players.LocalPlayer
 local ZombiesFolder = workspace:WaitForChild("Zombies")
-local Map = workspace:FindFirstChild("Map", true)
 
 local PROXIMITY_RADIUS_HIT = 25
 local PROXIMITY_RADIUS_PUSH = 5
@@ -82,23 +81,6 @@ function container.getNearbyZombies()
         local ZombieType = Zombie:GetAttribute("Type")
 
         table.insert(Zombies, {Zombie, ZombieRoot, ZombieHumanoid, ZombieType})
-    end
-
-    local ModesFolder = Map.Parent:FindFirstChild("Modes")
-
-    for _, ObjZombie in pairs(ModesFolder:GetDescendants()) do
-        if not ObjZombie:IsA("Model") or not ObjZombie:FindFirstChild("Hit") then
-            continue
-        end
-
-        local ZombieHumanoid = ObjZombie:FindFirstChildOfClass("Humanoid")
-        local ZombieRoot = ObjZombie:FindFirstChild("HumanoidRootPart")
-
-        if not (ZombieHumanoid and ZombieRoot) then
-            continue
-        end
-
-        table.insert(Zombies, {ObjZombie, ZombieRoot, ZombieHumanoid, "Fast"})
     end
 
     return Zombies
