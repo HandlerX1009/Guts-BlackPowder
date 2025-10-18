@@ -98,7 +98,7 @@ function container.getNearbyZombies()
             continue
         end
 
-        table.insert(Zombies, {ObjZombie, ZombieRoot, ZombieHumanoid, "Barrel"})
+        table.insert(Zombies, {ObjZombie, ZombieRoot, ZombieHumanoid, "Fast"})
     end
 
     return Zombies
