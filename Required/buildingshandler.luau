@@ -72,7 +72,7 @@ function container.UpdateandRepairBuildings()
             adornment.Color3 = Color3.fromHSV(0.336*(health/maxhealth), 1, 1)
         end
   
-        if health >= maxhealth or not ENABLED then
+        if health.Value >= maxhealth or not ENABLED then
             continue
         end
 
