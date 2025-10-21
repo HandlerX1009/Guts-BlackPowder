@@ -3,7 +3,6 @@ local container = {}
 local LocalPlayer = game.Players.LocalPlayer
 local ZombiesFolder = workspace:WaitForChild("Zombies")
 
-local PROXIMITY_RADIUS_HIT = 25
 local PROXIMITY_RADIUS_PUSH = 5
 
 local SPECIAL_ZOMBIE_COLORS = {
@@ -86,7 +85,7 @@ function container.getNearbyZombies()
     return Zombies
 end
 
-function container.getNearbyZombiesFiltered(HitBombers)
+function container.getNearbyZombiesFiltered(HitBombers, range)
     local Zombies = container.getNearbyZombies()
     
     local ToHit = {}
@@ -104,7 +103,7 @@ function container.getNearbyZombiesFiltered(HitBombers)
     
         local Dist = LocalPlayer:DistanceFromCharacter(ZombieRoot.Position)
     
-        if Dist > PROXIMITY_RADIUS_PUSH and Dist <= PROXIMITY_RADIUS_HIT then
+        if Dist > PROXIMITY_RADIUS_PUSH and Dist <= range then
             table.insert(ToHit, {Zombie, ZombieRoot})
         elseif Dist <= PROXIMITY_RADIUS_PUSH then
             table.insert(ToPush, {Zombie, ZombieRoot})
