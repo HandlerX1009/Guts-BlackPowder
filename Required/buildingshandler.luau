@@ -52,7 +52,7 @@ end
 function container.UpdateandRepairBuildings()
     local Buildings = GetBuildings()
 
-    for _, buildingData in pairs(Buildings) d
+    for _, buildingData in pairs(Buildings) do
         local building = buildingData[1]
         local buildingHitbox = buildingData[2]
         local health, maxhealth = buildingData[3], buildingData[4] -- Health is a NumberValue object, while maxhealth is an attribute from that
