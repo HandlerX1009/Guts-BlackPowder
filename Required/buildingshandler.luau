@@ -55,7 +55,7 @@ function container.UpdateandRepairBuildings()
     for _, buildingData in pairs(Buildings)
         local building = buildingData[1]
         local buildingHitbox = buildingData[2]
-        local health, maxhealth = buildingData[3], buildingData[4]
+        local health, maxhealth = buildingData[3], buildingData[4] -- Health is a NumberValue object, while maxhealth is an attribute from that
 
         local adornment = building:FindFirstChildOfClass("BoxHandleAdornment")
 
@@ -64,7 +64,7 @@ function container.UpdateandRepairBuildings()
             adornment.Parent = building
         end
 
-        if health == maxhealth then
+        if health.Value == maxhealth then
             adornment.Color3 = MAX_HEALTH_COLOR
         else
             adornment.Color3 = Color3.fromHSV(0.336*(health/maxhealth), 1, 1)
@@ -74,7 +74,7 @@ function container.UpdateandRepairBuildings()
             continue
         end
 
-        
+        Hammer.RemoteEvent:FireServer("Repair", health)
     end
 end
 
