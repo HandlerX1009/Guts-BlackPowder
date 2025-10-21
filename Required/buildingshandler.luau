@@ -5,10 +5,10 @@ local Backpack = LocalPlayer.Backpack
 
 local Hammer = Backpack:FindFirstChild("Hammer")
 
-local ENABLED = false
+local ENABLED = true
 if not Hammer then
     warn("Player does not have hammer - disabling auto repair")
-    ENABLED = true
+    ENABLED = false
 end
 
 local BuildingsFolder = workspace.Buildings
