@@ -85,7 +85,7 @@ function container.getNearbyZombies()
     return Zombies
 end
 
-function container.getNearbyZombiesFiltered(HitBombers, range)
+function container.getNearbyZombiesFiltered(hitBombers, range, canPush)
     local Zombies = container.getNearbyZombies()
     
     local ToHit = {}
@@ -97,13 +97,13 @@ function container.getNearbyZombiesFiltered(HitBombers, range)
         local ZombieHumanoid = ZombieData[3]
         local ZombieType = ZombieData[4]
         
-        if not HitBombers and ZombieType == "Barrel" then
+        if not hitBombers and ZombieType == "Barrel" then
             continue
         end
     
         local Dist = LocalPlayer:DistanceFromCharacter(ZombieRoot.Position)
     
-        if Dist > PROXIMITY_RADIUS_PUSH and Dist <= range then
+        if (Dist > PROXIMITY_RADIUS_PUSH or not canPush) and Dist <= range then
             table.insert(ToHit, {Zombie, ZombieRoot})
         elseif Dist <= PROXIMITY_RADIUS_PUSH then
             table.insert(ToPush, {Zombie, ZombieRoot})
