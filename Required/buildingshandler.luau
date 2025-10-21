@@ -30,7 +30,9 @@ function GetBuildings()
     local PlayerFolders = {}
     
     for _, PlayerFolder in pairs(BuildingsFolder:GetChildren()) do
-        table.insert(PlayerFolders, PlayerFolder)
+        for _, building in pairs(PlayerFolder:GetChildren()) do
+            table.insert(PlayerFolders, building)
+        end
     end
     
     for _, Building in pairs(PlayerFolders) do
