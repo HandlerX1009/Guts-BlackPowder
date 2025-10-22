@@ -54,6 +54,8 @@ end
 function container.UpdateandRepairBuildings()
     local Buildings = GetBuildings()
 
+    local closest, closestBuilding = 15, nil
+
     for _, buildingData in pairs(Buildings) do
         local building = buildingData[1]
         local buildingHitbox = buildingData[2]
@@ -76,6 +78,14 @@ function container.UpdateandRepairBuildings()
             continue
         end
 
+        local dist = LocalPlayer:DistanceFromCharacter(buildingHitbox.Position)
+
+        if dist < closest then
+            closest, closestBuilding = dist, health
+        end
+    end
+
+    if closestBuilding then
         Hammer.RemoteEvent:FireServer("Repair", health)
     end
 end
