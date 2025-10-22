@@ -1,7 +1,7 @@
 local Library = {}
 function Library:CreateWindow(titleText,prompt)
     local ModestLib = Instance.new("ScreenGui")
-    local Window = Instance.new("ScrollableFrame")
+    local Window = Instance.new("ScrollingFrame")
     local TitleFrame = Instance.new("Frame")
     local Title = Instance.new("TextLabel")
     local UIListLayout = Instance.new("UIListLayout")
