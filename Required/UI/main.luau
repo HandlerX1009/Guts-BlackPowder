@@ -251,6 +251,8 @@ function Library:CreateWindow(titleText,prompt)
             TextButton.MouseLeave:Connect(function()
                 TextButton.BackgroundTransparency = 1
             end)
+
+            return TextButton
         end
         
         function tabInnards:NewToggle(name,state,interaction,danger)
@@ -337,6 +339,8 @@ function Library:CreateWindow(titleText,prompt)
             TextButton.MouseLeave:Connect(function()
                 TextButton.BackgroundTransparency = 1
             end)
+
+            return TextButton
         end
         
         function tabInnards:NewLabel(name,warning)
@@ -983,6 +987,8 @@ function Library:CreateWindow(titleText,prompt)
         TextButton.MouseLeave:Connect(function()
             TextButton.BackgroundTransparency = 1
         end)
+
+        return TextButton
     end
 
     function innards:NewToggle(name,state,interaction,danger)
@@ -1327,6 +1333,8 @@ function Library:CreateWindow(titleText,prompt)
         end
         TextButton.TextSize = 16.000
         TextButton.TextXAlignment = Enum.TextXAlignment.Center
+
+        return TextButton
     end
 
     function innards:NewParagraph(name,height,fontSize,warning)
@@ -1347,6 +1355,8 @@ function Library:CreateWindow(titleText,prompt)
         end
         TextButton.TextSize = fontSize or 16
         TextButton.TextXAlignment = Enum.TextXAlignment.Center
+
+        return TextButton
     end
 
     function innards:DestroyGuiButton()
