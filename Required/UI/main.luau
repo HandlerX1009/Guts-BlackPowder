@@ -36,6 +36,10 @@ function Library:CreateWindow(titleText,prompt)
     Window.Draggable = true
     Window.Active = true
     Window.Selectable = true
+    Window.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
+    Window.CanvasSize = UDim2.new(0, 0, 0, 0)
+    Window.AutomaticCanvasSize = Enum.AutomaticSize.Y
+    Window.ScrollBarThickness = 5
 
     TitleFrame.Name = "TitleFrame"
     TitleFrame.Parent = Window
