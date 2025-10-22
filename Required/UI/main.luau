@@ -45,6 +45,9 @@ function Library:CreateWindow(titleText,prompt)
     TitleFrame.Parent = Window
     TitleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     TitleFrame.BackgroundTransparency = 1.000
+    TitleFrame.Selectable = true
+    TitleFrame.Draggable = true
+    TitleFrame.Active = true
     TitleFrame.Size = UDim2.new(0, 389, 0, 26)
 
     Title.Name = "Title"
@@ -74,7 +77,7 @@ function Library:CreateWindow(titleText,prompt)
     end
 
     function innards:NewTab(name,danger)
-        local Tab = Instance.new("Frame")
+        local Tab = Instance.new("ScrollingFrame")
         local UIListLayout = Instance.new("UIListLayout")
         local Home = Instance.new("TextButton")
         local TextButton = Instance.new("TextButton")
@@ -125,6 +128,10 @@ function Library:CreateWindow(titleText,prompt)
         Tab.Position = UDim2.new(0, 0, 0.0329531059, 0)
         Tab.Size = UDim2.new(1, 0, 0.00126742711, 762)
         Tab.Visible = false
+        Tab.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
+        Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
+        Tab.AutomaticCanvasSize = Enum.AutomaticSize.Y
+        Tab.ScrollBarThickness = 5
         
         UIListLayout.Parent = Tab
         UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
