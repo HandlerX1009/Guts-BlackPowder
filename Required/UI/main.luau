@@ -39,7 +39,7 @@ function Library:CreateWindow(titleText,prompt)
     Window.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
     Window.CanvasSize = UDim2.new(0, 0, 0, 0)
     Window.AutomaticCanvasSize = Enum.AutomaticSize.Y
-    Window.ScrollBarThickness = 5
+    Window.ScrollBarThickness = 2.5
 
     TitleFrame.Name = "TitleFrame"
     TitleFrame.Parent = Window
@@ -131,7 +131,7 @@ function Library:CreateWindow(titleText,prompt)
         Tab.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
         Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
         Tab.AutomaticCanvasSize = Enum.AutomaticSize.Y
-        Tab.ScrollBarThickness = 5
+        Tab.ScrollBarThickness = 2.5
         
         UIListLayout.Parent = Tab
         UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
