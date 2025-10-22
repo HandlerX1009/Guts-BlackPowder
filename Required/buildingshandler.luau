@@ -51,7 +51,7 @@ function GetBuildings()
     return Buildings
 end
 
-function container.UpdateandRepairBuildings()
+function container.UpdateandRepairBuildings(shouldRepair)
     local Buildings = GetBuildings()
 
     local closest, closestBuilding = 15, nil
@@ -74,7 +74,7 @@ function container.UpdateandRepairBuildings()
             adornment.Color3 = Color3.fromHSV(0.336*(health.Value/maxhealth), 1, 1)
         end
   
-        if health.Value >= maxhealth or not ENABLED then
+        if health.Value >= maxhealth or not ENABLED or not shouldRepair then
             continue
         end
 
