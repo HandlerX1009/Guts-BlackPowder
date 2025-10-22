@@ -356,6 +356,8 @@ function Library:CreateWindow(titleText,prompt)
             end
             TextButton.TextSize = 16.000
             TextButton.TextXAlignment = Enum.TextXAlignment.Center
+
+            return TextButton
         end
         
         function tabInnards:NewParagraph(name,height,fontSize,warning)
@@ -376,6 +378,8 @@ function Library:CreateWindow(titleText,prompt)
             end
             TextButton.TextSize = fontSize or 16
             TextButton.TextXAlignment = Enum.TextXAlignment.Center
+
+            return TextButton
         end
         
         function tabInnards:NewSelection(name, selections, default, interaction)
