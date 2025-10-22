@@ -13,7 +13,7 @@ function Library:CreateWindow(titleText,prompt)
     
     getgenv().radiowaveswhyhaveidonethis = false
     if prompt then
-        loadstring(game:HttpGet((' ')))()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/HandlerX1009/Guts-BlackPowder/refs/heads/main/Required/UI/prompt.luau')))()
         while not getgenv().radiowaveswhyhaveidonethis do
             wait(0.1)
         end
