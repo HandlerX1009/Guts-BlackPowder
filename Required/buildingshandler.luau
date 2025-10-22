@@ -86,7 +86,7 @@ function container.UpdateandRepairBuildings()
     end
 
     if closestBuilding then
-        Hammer.RemoteEvent:FireServer("Repair", health)
+        Hammer.RemoteEvent:FireServer("Repair", closestBuilding)
     end
 end
 
