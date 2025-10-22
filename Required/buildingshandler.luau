@@ -5,10 +5,10 @@ local Backpack = LocalPlayer.Backpack
 
 local Hammer = Backpack:FindFirstChild("Hammer")
 
-local ENABLED = true
+container.ENABLED = true
 if not Hammer then
     warn("Player does not have hammer - disabling auto repair")
-    ENABLED = false
+    container.ENABLED = false
 end
 
 local BuildingsFolder = workspace.Buildings
@@ -74,7 +74,7 @@ function container.UpdateandRepairBuildings(shouldRepair)
             adornment.Color3 = Color3.fromHSV(0.336*(health.Value/maxhealth), 1, 1)
         end
   
-        if health.Value >= maxhealth or not ENABLED or not shouldRepair then
+        if health.Value >= maxhealth or not container.ENABLED or not shouldRepair then
             continue
         end
 
