@@ -28,15 +28,15 @@ local MaxSpeedCount = InfoTab:NewParagraph("MaxSpeed: ???")
 
 --[[------------------------------------------------------]]--
 local GUIReturn = {
-    ["KillCount"] = {KillCount,  "Kills: %i"},
-    ["ZombieCount"] = {ZombieCount, "Zombies: %i"},
-    ["InfectionCount"] = {InfectionCount, "Infection Amount: %f/100"},
-    ["RoundsCount"] = {RoundsCount, "Rounds Alive: %i"},
-    ["HeatCount"] = {HeatCount, "Heat Amount: %f"},
-    ["BurnMultCount"] = {BurnMultCount, "Burn Multiplier: %f"},
-    ["BurnCount"] = {BurnCount, "Burn Amount: %f"},
-    ["BaseSpeedCount"] = {BaseSpeedCount, "BaseSpeed: %f"},
-    ["MaxSpeedCount"] = {MaxSpeedCount, "MaxSpeed: %f"},
+    ["KillCount"] = {KillCount,  "Kills: %.2f"},
+    ["ZombieCount"] = {ZombieCount, "Zombies: %.2f"},
+    ["InfectionCount"] = {InfectionCount, "Infection Amount: %.2f/100"},
+    ["RoundsCount"] = {RoundsCount, "Rounds Alive: %.2f"},
+    ["HeatCount"] = {HeatCount, "Heat Amount: %.2f"},
+    ["BurnMultCount"] = {BurnMultCount, "Burn Multiplier: %.2f"},
+    ["BurnCount"] = {BurnCount, "Burn Amount: %.ff"},
+    ["BaseSpeedCount"] = {BaseSpeedCount, "BaseSpeed: %.2f"},
+    ["MaxSpeedCount"] = {MaxSpeedCount, "MaxSpeed: %.2f"},
 }
 
 return GUIReturn
